@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+ <html ng-app="auccApp"> 
+
+
+<head>
+<meta charset="utf-8" />
+<title>Auto Testing</title>
+
+ <script src="/js/angular.min.js"></script>
+<script src="/js/jquery.min.js"></script>
+<!-- <link href="/css/bootstrap.css" rel="stylesheet" /> -->
+
+<script src="/js/demoCtrl.js"></script> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+
+
+<body ng-controller="rfidCtrl as ctrl"> 
+
+<div >
+
+<div ng-init="rb_seleted.value='+'">
+	<input  type="radio" id="plus" name="calc" ng-model='rb_seleted.value' ng-value="'+'" ng-change="onChecked()" >
+	<label for="plus">Plus</label>
+
+	<input  type="radio" id="minus" name="calc" ng-model='rb_seleted.value' ng-value="'-'" ng-change="onChecked()">
+	<label for="minus">Minus</label>
+
+	<input  type="radio" id="multi" name="calc" ng-model='rb_seleted.value' ng-value="'*'" ng-change="onChecked()">
+	<label for="multi">Multiplied</label>
+
+	<input  type="radio" id="divide" name="calc" ng-model='rb_seleted.value' ng-value="'/'" ng-change="onChecked()">
+	<label for="divide">Divide</label>
+</div>
+
+
+<br>
+<div ng-show="err">
+	<label id="err" >{{txtErrMsg}}</label>
+</div>
+<br>
+Enter A: <input  id="i_a" type="number" ng-model="a" ng-change="onChecked()" step=".01" required><br>
+Enter B: <input  id="i_b" type="number" ng-model="b" ng-change="onChecked()" step=".01" required>
+
+<div >
+	<label id="result">{{txtResult}}</label>
+</div>
+
+	<button class="btn btn-primary" id="google" type="button" onclick="location.href='http://google.com'">google.com</button>
+<!-- 
+	<h1>Enter value here ..</h1>
+
+	<div ng-hide="v_deposit">
+		deposit {{test}}
+		<input type="number" ng-model="v_dep">
+		<button ng-click="deposit(v_dep)" >Next</button>
+	</div>
+	
+	<div ng-show="v_deposit">
+		Withdraw {{test}}
+		<input type="number" ng-model="v_withd">
+		<button ng-click="withdraw(v_withd)" >Next</button>
+	
+	</div>
+	<button ng-click="all_test()" >All</button>
+	{{test}} -->
+</div>
+
+
+	<!--     <a href="/map_rfid.html">
+      <input type="button" value="อย่าลบปุ่มนี้นะ">
+    </a> -->
+	<!-- <button ng-click="go('/map_rfid.html')">อย่าลบปุ่มนี้นะ</button> -->
+</body>
+
+</html>
